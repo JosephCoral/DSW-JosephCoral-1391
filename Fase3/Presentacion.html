@@ -4,6 +4,7 @@
   <title>Mi Sitio Web</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="estilo.css">
+  
 </head>
 <body>
   <header>
@@ -17,10 +18,10 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Temas</a>
-          </li>
           <li class="nav-item">
+            <a class="nav-link" href="Temas.html">Temas</a>
+          </li>
+          <li class="nav-item active">
             <a class="nav-link" href="#">Presentación</a>
           </li>
           <li class="nav-item">
@@ -38,14 +39,53 @@
           <h3>Menú</h3>
           <ul class="list-group">
             <li class="list-group-item"><a href="index.html">Inicio</a></li>
-            <li class="list-group-item"><a href="#">Audio</a></li>
+            <li class="list-group-item"><a href="Audio.html">Audio</a></li>
             <li class="list-group-item"><a href="#">Presentación</a></li>
             <li class="list-group-item"><a href="Fase4/Cuestionario.html">Cuestionario</a></li>
           </ul>
         </aside>
         <section class="col-md-9">
-          <h1>Temas</h1>
-          <p>Contenido de la página de temas.</p>
+          <style>
+          
+            h1 {
+              color: #ff00ff;
+              font-size: 2.5em;
+              text-align: center;
+              text-transform: uppercase;
+              margin-bottom: 30px;
+            }
+
+            p {
+              color: #0080ff;
+              font-size: 1.2em;
+              line-height: 1.5;
+              margin-bottom: 20px;
+            }
+
+            .highlight {
+              color: #ff0000;
+              font-weight: bold;
+              color: #333;
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 20px;
+            }
+
+            .emphasis {
+              font-style: italic;
+            }
+  
+          </style>
+          <h1>Presentación</h1>
+          <p>
+            Mi nombre es <span class="highlight">Joseph Coral</span>, tengo 29 años, vivo en la ciudad de <span class="highlight">Ipiales</span>, me gusta la producción musical, tengo mi estudio de producción musical, realicé parte de la carrera de licenciatura en música y de ahí he aprendido a realizar producción de audio de manera empírica en cuanto al manejo de DAW y equipos. Por este motivo estoy estudiando este tecnólogo en la UNAD. Trabajo también como <span class="emphasis">community manager</span> y desarrollador de Sitios Web. Me encanta la fotografía.
+          </p>
+          <p>
+            Aqui una imagen Generada con <span class="highlight">Inteligencia Artificial</span> de lo que me gusta hacer
+          </p>
+          <p>
+            <img src="IAproducer.jpg">
+          </p>
         </section>
       </div>
     </div>
