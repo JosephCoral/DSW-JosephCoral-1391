@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+  <script>
+    function verificarRespuestas() {
+      // Obtener las respuestas seleccionadas por el usuario
+      var pregunta1 = document.querySelector('input[name="pregunta1"]:checked').value;
+      var pregunta2 = document.querySelector('input[name="pregunta2"]:checked').value;
+      var pregunta3 = document.querySelector('input[name="pregunta3"]:checked').value;
+
+      // Verificar las respuestas
+      var puntaje = 0;
+      if (pregunta1 === "opcionB") {
+        puntaje++;
+      }
+      if (pregunta2 === "opcionA") {
+        puntaje++;
+      }
+      if (pregunta3 === "opcionC") {
+        puntaje++;
+      }
+
+      // Mostrar el resultado
+      var resultado = "Obtuviste " + puntaje + " de 3 respuestas correctas.";
+      alert(resultado);
+
+      // Reiniciar el formulario
+      document.querySelector('input[name="pregunta1"]:checked').checked = false;
+      document.querySelector('input[name="pregunta2"]:checked').checked = false;
+      document.querySelector('input[name="pregunta3"]:checked').checked = false;
+    }
+  </script>
+</head>
+<body>
+  <h1>Quiz</h1>
+  <form>
+    <h3>Pregunta 1:</h3>
+    <p>Texto pregunta 1</p>
+    <input type="radio" name="pregunta1" value="opcionA"> a) <br>
+    <input type="radio" name="pregunta1" value="opcionB"> b) <br>
+    <input type="radio" name="pregunta1" value="opcionC"> c) <br>
+
+    <h3>Pregunta 2:</h3>
+    <p>Texto pregunta 2</p>
+    <input type="radio" name="pregunta2" value="opcionA"> a) <br>
+    <input type="radio" name="pregunta2" value="opcionB"> b) <br>
+    <input type="radio" name="pregunta2" value="opcionC"> c) <br>
+
+    <h3>Pregunta 3:</h3>
+    <p>Texto pregunta 3</p>
+    <input type="radio" name="pregunta3" value="opcionA"> a) <br>
+    <input type="radio" name="pregunta3" value="opcionB"> b) <br>
+    <input type="radio" name="pregunta3" value="opcionC"> c) <br>
+
+    <br>
+    <input type="button" value="Enviar respuestas" onclick="verificarRespuestas()">
+  </form>
+</body>
+</html>
