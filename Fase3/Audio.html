@@ -4,6 +4,46 @@
   <title>Mi Sitio Web</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="estilo.css">
+  <style>
+    /* Estilos del reproductor */
+    .audio-player {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .audio-controls {
+      margin-bottom: 20px;
+    }
+
+    .audio-controls button {
+      background-color: magenta;
+      color: cyan;
+      border: none;
+      padding: 10px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-right: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px magenta;
+      transition: transform 0.3s ease;
+    }
+
+    .audio-controls button:hover {
+      transform: scale(1.1);
+    }
+
+    .audio-info {
+      font-size: 18px;
+      font-style: italic;
+      color: cyan;
+      text-shadow: 0 0 10px magenta;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -44,8 +84,52 @@
           </ul>
         </aside>
         <section class="col-md-9">
-          <h1>Temas</h1>
-          <p>Contenido de la página de temas.</p>
+          <h1>Audio sobre CSSGRid</h1>
+          <p>
+            
+            <div class="audio-player">
+              <div class="audio-controls">
+                <button id="play-button">Play</button>
+                <button id="pause-button">Pause</button>
+                <button id="stop-button">Stop</button>
+              </div>
+              <div class="audio-info">
+                <span id="audio-name">CSSGRid.mp3</span>
+                <span id="audio-status">Detenido</span>
+              </div>
+            </div>
+          
+            <script>
+              // Funciones de control del reproductor
+              const playButton = document.getElementById('play-button');
+              const pauseButton = document.getElementById('pause-button');
+              const stopButton = document.getElementById('stop-button');
+              const audioName = document.getElementById('audio-name');
+              const audioStatus = document.getElementById('audio-status');
+          
+              const audio = new Audio('CSSGrid.mp3');
+          
+              playButton.addEventListener('click', () => {
+                audio.play();
+                audioStatus.textContent = 'Reproduciendo';
+              });
+          
+              pauseButton.addEventListener('click', () => {
+                audio.pause();
+                audioStatus.textContent = 'Pausado';
+              });
+          
+              stopButton.addEventListener('click', () => {
+                audio.pause();
+                audio.currentTime = 0;
+                audioStatus.textContent = 'Detenido';
+              });
+          
+              audio.addEventListener('ended', () => {
+                audioStatus.textContent = 'Detenido';
+              });
+            </script>
+          </p>
         </section>
       </div>
     </div>
